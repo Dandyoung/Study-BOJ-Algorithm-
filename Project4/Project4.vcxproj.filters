@@ -36,5 +36,8 @@
     <ClCompile Include="stairs.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="gain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
