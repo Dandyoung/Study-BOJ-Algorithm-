@@ -2,6 +2,7 @@
 #include <fstream>
 using namespace std;
 
+// test
 
 int main() {
 	ifstream fin("C:/Users/ÀÌ¿µ¿ì/Desktop/sampleData3/1.inp");
