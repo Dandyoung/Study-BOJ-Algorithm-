@@ -13,15 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\백준">
+      <UniqueIdentifier>{0126e03f-64a5-4a43-92b1-adaa8c94565f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="소스.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="1463.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ACM호텔.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="소스12.cpp">
@@ -38,6 +35,18 @@
     </ClCompile>
     <ClCompile Include="gain.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="1463.cpp">
+      <Filter>소스 파일\백준</Filter>
+    </ClCompile>
+    <ClCompile Include="ACM호텔.cpp">
+      <Filter>소스 파일\백준</Filter>
+    </ClCompile>
+    <ClCompile Include="1546.cpp">
+      <Filter>소스 파일\백준</Filter>
+    </ClCompile>
+    <ClCompile Include="8958.cpp">
+      <Filter>소스 파일\백준</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

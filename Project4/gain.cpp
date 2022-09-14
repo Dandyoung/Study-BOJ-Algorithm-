@@ -6,11 +6,13 @@
 using namespace std;
 
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
 	ifstream fin("gain.inp");
 	ofstream fout("gain.out");
 	int layer;
 	fin >> layer;
-
 	int cnt = 0;
 
 	while (cnt < layer) {
