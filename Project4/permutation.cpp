@@ -1,38 +1,67 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
-#include <queue>
-#include <string>
-#include <memory.h>
-#include <math.h>
-using namespace std;
-vector<int> v(1024), res(1024);
-int n;
-int cnt = 0;
-void go(int now, int depth) {
-	if (depth == n) res[now] = v[cnt++]; //마지막값
-	else {
-		go(now * 2, depth + 1); //왼
-		res[now] = v[cnt++]; //현재
-		go(now * 2 + 1, depth + 1); //우
-	}
-}
+#include <map>
+#include <fstream>
 
-int main() {
-	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	cin >> n;
-	int nn = pow(2, n) - 1;
-	for (int i = 0; i < nn; i++) {
-		cin >> v[i];
-	}
-	go(1, 1);
-	int cnt = 1;
-	for (int i = 0; i < n; i++) {
-		int len = 1;
-		for (int j = 0; j < i; j++) len *= 2; //개수
-		for (int j = 0; j < len; j++) {
-			cout << res[cnt++] << " ";
+using namespace std;
+map<int, int> m;
+
+int main(void){
+	ifstream fin("C:/Users/이영우/Desktop/sampleData7/test.inp");
+	ofstream fout("C:/Users/이영우/Desktop/sampleData7/test.out");
+
+	int layer;
+	fin >> layer;
+	int cnt = 0;
+
+	while (cnt < layer) {
+		int size;
+		fin >> size;
+		vector <int> v;
+		vector <int> v2;
+		for (int i = 0; i < size; i++) {
+			int a;
+			fin >> a;
+			v.push_back(a);
+			v2.push_back(-1);
 		}
-		cout << "\n";
+		for (int i = 0; i < v.size(); i++) {
+			cout << v[i] << " ";
+		}
+		int cvmax = 0;
+		int cvmax_index = 0;
+		for (int i = 0; i < v.size(); i++) {
+			if (cvmax <= v[i]) {
+				cvmax = v[i];
+				cvmax_index = i;
+			}
+		}
+		cout << endl;
+		cout << " 최대값 : " << cvmax << endl;
+		cout << " 최대값 인덱스 : " << cvmax_index << endl;
+		v2[cvmax_index] = 0;
+		int start = 0;
+		int end = size;
+		
+		cout << cvmax_index - start << " " << end - cvmax_index << endl;
+		
+		for (int i = 0; i < v.size(); i++) {
+			if (v2[1] != -1) {
+				v2[0] = v2[1];
+			}
+			if (v2[size - 1] != -1) {
+				v2[size - 1] = v2[size];
+			}
+		}
+		
+
+
+		cout << endl;
+		cnt++;
+
 	}
+
+	fin.close();
+	fout.close();
+
 }
