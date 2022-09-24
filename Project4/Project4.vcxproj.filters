@@ -72,5 +72,11 @@
     <ClCompile Include="permutation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="bitmap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="bitmap_test.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
