@@ -1,65 +1,71 @@
 #include <iostream>
 #include <vector>
-#include <map>
 #include <fstream>
-
+#include <algorithm>
 using namespace std;
-map<int, int> m;
 
 int main(void){
-	ifstream fin("C:/Users/이영우/Desktop/sampleData7/test.inp");
-	ofstream fout("C:/Users/이영우/Desktop/sampleData7/test.out");
+	ifstream fin("permutation.inp");
+	ofstream fout("permutation.out");
 
 	int layer;
 	fin >> layer;
 	int cnt = 0;
-
 	while (cnt < layer) {
+		vector <int> v;
+		vector <int> qqq;
+		vector <int> qqq2;
 		int size;
 		fin >> size;
-		vector <int> v;
-		vector <int> v2;
 		for (int i = 0; i < size; i++) {
 			int a;
 			fin >> a;
 			v.push_back(a);
-			v2.push_back(-1);
+			qqq.push_back(0);
+			qqq2.push_back(0);
 		}
-		for (int i = 0; i < v.size(); i++) {
-			cout << v[i] << " ";
-		}
-		int cvmax = 0;
-		int cvmax_index = 0;
-		for (int i = 0; i < v.size(); i++) {
-			if (cvmax <= v[i]) {
-				cvmax = v[i];
-				cvmax_index = i;
-			}
-		}
-		cout << endl;
-		cout << " 최대값 : " << cvmax << endl;
-		cout << " 최대값 인덱스 : " << cvmax_index << endl;
-		v2[cvmax_index] = 0;
+
 		int start = 0;
-		int end = size;
-		
-		cout << cvmax_index - start << " " << end - cvmax_index << endl;
-		
-		for (int i = 0; i < v.size(); i++) {
-			if (v2[1] != -1) {
-				v2[0] = v2[1];
-			}
-			if (v2[size - 1] != -1) {
-				v2[size - 1] = v2[size];
+		for (int i = 0; i < v.size(); i++) {		
+
+			int start = v[i];
+			for (int j = i; j < size; j++) {
+				if (start < v[j]) {
+					break;
+				}
+				else if (start > v[j]) {
+					qqq[j] += 1;
+				}
 			}
 		}
-		
+
+		reverse(v.begin(), v.end());
 
 
-		cout << endl;
+		int start2 = 0;
+		for (int i = 0; i < v.size(); i++) {
+			int start2 = v[i];
+			for (int j = i; j < size; j++) {
+				if (start2 < v[j]) {
+					break;
+				}
+				else if(start2 > v[j]) {
+					qqq2[j] += 1;
+				}
+			}
+		}
+		reverse(qqq2.begin(), qqq2.end());
+
+		for (int i = 0; i < qqq.size(); i++) {
+			qqq[i] += qqq2[i];
+		}
+		for (int i = 0; i < qqq.size(); i++) {
+			fout << qqq[i] << " ";
+		}
+		fout << '\n';
 		cnt++;
-
 	}
+	
 
 	fin.close();
 	fout.close();
