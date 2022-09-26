@@ -65,7 +65,7 @@ int main(void){
 		fout << '\n';
 		cnt++;
 	}
-	
+		//
 
 	fin.close();
 	fout.close();
