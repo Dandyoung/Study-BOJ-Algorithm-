@@ -164,7 +164,7 @@ int main() {
 			cout << "\n";
 		}
 		else {
-
+			//
 			cin >> ans;
 			idx = 0;
 			calcDatamap(0, 0, N - 1, M - 1);
