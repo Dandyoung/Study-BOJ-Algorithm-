@@ -72,11 +72,16 @@
     <ClCompile Include="permutation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="bitmap_qqq.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="bitmap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="bitmap_test.cpp">
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\sampleData8\test.inp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
+    </None>
   </ItemGroup>
 </Project>
