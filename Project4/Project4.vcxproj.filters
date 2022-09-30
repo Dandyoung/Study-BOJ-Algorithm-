@@ -78,10 +78,8 @@
     <ClCompile Include="bitmap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\sampleData8\test.inp">
+    <ClCompile Include="gridpath.cpp">
       <Filter>소스 파일</Filter>
-    </None>
+    </ClCompile>
   </ItemGroup>
 </Project>
