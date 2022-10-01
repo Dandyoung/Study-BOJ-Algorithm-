@@ -5,7 +5,7 @@
 using namespace std;
 
 
-int minmin(int row, int col, vector<vector<int>> &v, vector<vector<int>> &v3) {
+int minmin(int row, int col, vector<vector<int>> v, vector<vector<int>> v3) {
     if (row == 0 && col == 0) {
         return v3[row][col];
     }
