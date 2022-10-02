@@ -45,7 +45,7 @@ int main() {
                 thr_cnt++;
             }
         }
-        //cout << zero_cnt << " " << one_cnt << " " << two_cnt << " " << thr_cnt << endl;
+
         fout << "(" << v2[0] << " " << v2[1] << " " << v2[2] << ") : ";
         if (zero_cnt == 2 && one_cnt == 1) {
             fout << "-1" << '\n';
@@ -65,9 +65,7 @@ int main() {
         else {
             fout << "1" << '\n';
         }
-
         cnt++;
-
 	}
 
 

@@ -84,5 +84,8 @@
     <ClCompile Include="coin.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="coinmove.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
