@@ -1,20 +1,22 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <cstring>
 #include <algorithm>
 
 using namespace std;
 
-vector <vector<bool>> v(1000001, vector <bool>(8, 0));
 int p, k, s;
+vector <vector<bool>> v(1000001,vector <bool> (8, false));
 
-bool winCheck(int index, int step) {
-    if (index != 0 && index % p == 0) {
+
+bool winCheck(int idx, int stair) {
+    if (idx != 0 && idx % p == 0) {
         return false;
     }
     for (int i = 1; i <= k; i++) {
-        if (i != step) {
-            if (v[index][i]) {
+        if (i != stair) {
+            if (v[idx][i]) {
                 return false;
             }
         }
@@ -24,7 +26,7 @@ bool winCheck(int index, int step) {
 
 void coinCheck() {
     for (int i = 1; i <= s; i++) {
-        if (i == s || i % p != 0) {
+        if (i % p != 0 || i == s) {
             for (int j = 1; j <= k; j++) {
                 if (i - j >= 0) {
                     v[i][j] = winCheck(i - j, j);
@@ -33,10 +35,9 @@ void coinCheck() {
         }
     }
 }
-
 int chulOryoung() {
     for (int i = 1; i <= k; i++) {
-        if (v[s][i] == 1) {
+        if (v[s][i]) {
             return s - i;
         }
     }
@@ -46,19 +47,25 @@ int chulOryoung() {
 
 
 int main() {
-    ifstream fin("coinmove.inp");
-    ofstream fout("coinmove.out");
+    ifstream fin("C:/Users/이영우/Desktop/sampleData11/test.inp");
+    ofstream fout("C:/Users/이영우/Desktop/sampleData11/test.out");
     int layer;
     fin >> layer;
-    int cnt = 0;
 
+    int cnt = 0;
     while (cnt < layer) {
+        //int p, k, s;
         fin >> p >> k >> s;
         coinCheck();
-        int minindex = chulOryoung();
-        fout << minindex << endl;
+        cout << chulOryoung() << endl;
         cnt++;
     }
+
+
+    //int cnt = 0;
+    //while (cnt < layer) {
+
+    //}
 
     return 0;
 }

@@ -5,7 +5,7 @@
 using namespace std;
 
 
-int minmin(int row, int col, vector<vector<int>> v, vector<vector<int>> v3) {
+int minmin(int row, int col, vector<vector<int>> &v, vector<vector<int>> &v3) {
     if (row == 0 && col == 0) {
         return v3[row][col];
     }
@@ -35,7 +35,7 @@ int minmin(int row, int col, vector<vector<int>> v, vector<vector<int>> v3) {
 
 
 int main() {
-    ifstream fin("gridpath.inp");
+    ifstream fin("C:/Users/이영우/Desktop/알고리즘/9번과제/sampleData9/test.inp");
     ofstream fout("gridpath.out");
 
     int row, col;
@@ -99,7 +99,19 @@ int main() {
             v3[i][j] = minmin(i, j, v, v3);
         }
     }
-
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            cout << v[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            cout << v3[i][j] << " ";
+        }
+        cout << endl;
+    }
 
     if (v[row - 1][col - 1] == -1) {
         fout << "No path." << '\n';

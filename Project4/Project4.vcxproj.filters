@@ -87,5 +87,8 @@
     <ClCompile Include="coinmove.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="wow.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
