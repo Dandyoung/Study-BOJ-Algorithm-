@@ -7,12 +7,13 @@
 #define DP dp[I][J][K]=dp[I][K][J]=dp[J][I][K]=dp[J][K][I]=dp[K][I][J]=dp[K][J][I]
 
 int dp[200][200][200];
-//
+
 using namespace std;
 void solution_dp() {
 	for (int i = 1; i <= 200; ++i) {
 		for (int j = i; j <= 200; ++j) {
 			for (int k = j; k <= 200; ++k) {
+
 				if (j % i == 0 && k % i == 0) {
 					DP = (j / i) * (k / i); continue;
 				}
