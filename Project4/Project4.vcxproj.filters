@@ -90,13 +90,19 @@
     <ClCompile Include="wow.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="card.cpp">
+    <ClCompile Include="card%28past%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="cube.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="path.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="card.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="addingways.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
