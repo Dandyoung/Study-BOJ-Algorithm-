@@ -6,14 +6,14 @@
 using namespace std;
 
 int m = 5;
-int layer;
-int run_size;
-vector <int> val_v;
-vector <int> buf_v;
-vector <int> frz_v(5, 0);
-vector <int> run_v;
-vector <int> real_v;
-vector <int> size_check;
+int layer; // 총 testcase 갯수
+int run_size; // 각 run 길이를 저장하여 출력을 위한 변수
+vector <int> val_v;  //값을 받아오는 vector 
+vector <int> buf_v;  // 버퍼 vector
+vector <int> frz_v(5, 0); // 동결여부 검사
+vector <int> run_v; // 나가기 전 run vector 그냥 전역에서 사용하는 걸로 
+vector <int> real_v; // 실제 모든 값들이 저장되는 1D vector  
+vector <int> size_check; // 각 run 길이들이 저장되는 vector
 
 
 int main() {
@@ -23,7 +23,6 @@ int main() {
 	fin >> layer;
 
 	while (layer--) {
-		int run = 0;
 		int space;
 		fin >> space;
 		for (int i = 0; i < space; i++) {
@@ -76,7 +75,7 @@ int main() {
 					for (int i = 0; i < frz_v.size(); i++) {
 						frz_v[i] = 0;
 					}
-					// 나가기 전 정렬
+					// 나가기 전 혹시 모르니 sort
 					sort(run_v.begin(), run_v.end());
 					run_size = run_v.size();
 					size_check.push_back(run_size);
@@ -95,6 +94,7 @@ int main() {
 
 		// 더이상 받아올 값이 없는 상황 처리.
 		vector <int> last;
+		// frozen, not frozen을 판단하기 위해 사용하는 임시 vectors
 		for (int i = 0; i < buf_v.size(); i++) {
 			if (frz_v[i] == 0) {
 				run_v.push_back(buf_v[i]);
@@ -103,7 +103,7 @@ int main() {
 				last.push_back(buf_v[i]);
 			}
 		}
-		// 나가기 전 정렬
+		// 나가기 전 정렬, 여기는 sort를 해줘야함
 		sort(run_v.begin(), run_v.end());
 
 		run_size = run_v.size();
@@ -115,7 +115,7 @@ int main() {
 		for (int i = 0; i < last.size(); i++) {
 			run_v.push_back(last[i]);
 		}
-		// 나가기 전 정렬
+		// 나가기 전 정렬, 여기도 sort를 해줘야함
 		sort(run_v.begin(), run_v.end());
 		run_size = run_v.size();
 		size_check.push_back(run_size);
