@@ -10,8 +10,8 @@ int layer;
 
 vector <int> val_v;
 vector <int> buf_v;
-vector <int> frz_v(5,0);
-
+vector <int> frz_v(5, 0);
+vector <int> written_v;
 vector <int> run_v;
 
 
@@ -22,6 +22,7 @@ int main() {
 	fin >> layer;
 
 	while (layer--) {
+		int run = 0;
 		int space;
 		fin >> space;
 		for (int i = 0; i < space; i++) {
@@ -29,7 +30,7 @@ int main() {
 			fin >> a;
 			val_v.push_back(a);
 		}
-		
+
 		for (int i = 0; i < m; i++) {
 			buf_v.push_back(val_v[i]);
 		}
@@ -47,50 +48,47 @@ int main() {
 		cout << endl;
 
 		cout << "현재  buf 상태 : ";
-
-		for (int i = 0; i < m; i++) {
+		for (int i = 0; i < buf_v.size(); i++) {
 			cout << buf_v[i] << " ";
 		}
-		cout << endl;
 
-		cout << "현재  frz 상태 : ";
-
-		for (int i = 0; i < m; i++) {
-			cout << frz_v[i] << " ";
-		}
-		cout << endl;
-		
-		while (true) {
-			int cnt = 0;
-			for (int i = 0; i < frz_v.size(); i++) {
-				if (frz_v[i] == 1) {
-					cnt++;
-				}
-			}
-			if (cnt == 5) {
-				break;
-			}
+		while (!val_v.empty()) {
 			vector <int> cc;
+			int idx = 0;
 			for (int i = 0; i < frz_v.size(); i++) {
-				if (frz_v[i] != 1) {
+				if (frz_v[i] == 0) {
 					cc.push_back(buf_v[i]);
 				}
 			}
 
 			int min = *min_element(cc.begin(), cc.end());
-			int min_idx = min_element(cc.begin(), cc.end()) - cc.begin();
 			cc.clear();
-			cout << "최소값 : " << min << " 최소값 인덱스 : " << min_idx << endl;
-
-			run_v.push_back(buf_v[min_idx]);
-			buf_v[min_idx] = val_v.back();  // 다음 레코드 읽음
+			for (int i = 0; i < buf_v.size(); i++) {
+				if (buf_v[i] == min) {
+					idx = i;
+				}
+			}
+			run_v.push_back(min);
+			buf_v[idx] = val_v.back();
 			val_v.pop_back();
-			cout << endl;
-
-			if (buf_v[min_idx] < min) {
-				frz_v[min_idx] = 1;
+			if (min > buf_v[idx]) {
+				frz_v[idx] = 1;
+				int cnt = 0;
+				for (int i = 0; i < frz_v.size(); i++) {
+					if(frz_v[i] == 1) {
+						cnt++;
+					}
+				}
+				if (cnt == 5) {
+					break;
+				}
+			}
+			else {
+				continue;
 			}
 		}
+
+
 
 	}
 
