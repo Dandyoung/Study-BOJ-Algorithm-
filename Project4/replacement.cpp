@@ -23,7 +23,7 @@ int main() {
 	fin >> layer;
 
 	while (layer--) {
-		int space;
+		int space; 
 		fin >> space;
 		for (int i = 0; i < space; i++) {
 			int a;
@@ -103,7 +103,7 @@ int main() {
 				last.push_back(buf_v[i]);
 			}
 		}
-		// 나가기 전 정렬, 여기는 sort를 해줘야함
+		// 나가기 전 정렬, 여기는 sort를 꼭 해줘야함
 		sort(run_v.begin(), run_v.end());
 
 		run_size = run_v.size();
@@ -115,17 +115,19 @@ int main() {
 		for (int i = 0; i < last.size(); i++) {
 			run_v.push_back(last[i]);
 		}
-		// 나가기 전 정렬, 여기도 sort를 해줘야함
+		// 나가기 전 정렬, 여기도 sort를 꼭 해줘야함
 		sort(run_v.begin(), run_v.end());
 		run_size = run_v.size();
 		size_check.push_back(run_size);
 		for (int i = 0; i < run_v.size(); i++) {
 			real_v.push_back(run_v[i]);
 		}
+		// 런 갯수 출력
 		cout << size_check.size() << endl;
 		//size_check 벡터는 초기화 안해줘도됨
 		reverse(real_v.begin(), real_v.end());
 
+		// 각 런 상태 출력
 		for (int i = 0; i < size_check.size(); i++) {
 			int qq = size_check[i];
 			for (int i = 0; i < qq; i++) {
@@ -135,6 +137,8 @@ int main() {
 			}
 			cout << endl;
 		}
+
+		// 초기화
 		val_v.clear();
 		buf_v.clear();
 		run_v.clear();
