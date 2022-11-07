@@ -6,7 +6,7 @@
 using namespace std;
 
 int m = 5;
-int layer; // 총 testcase 갯수
+int layer; // 총 testcase 갯수..
 int run_size; // 각 run 길이를 저장하여 출력을 위한 변수
 vector <int> val_v;  //값을 받아오는 vector 
 vector <int> buf_v;  // 버퍼 vector
