@@ -2,7 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
-
+// 바로 못풀었던 문제
 using namespace std;
 vector <vector<bool>> v(1000001, vector <bool>(8, 0));
 int p, k, s;
