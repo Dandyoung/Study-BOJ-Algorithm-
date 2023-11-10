@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+// 생각보다 오래걸림
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
@@ -24,7 +24,7 @@ int main() {
 		//}
 	}
 		int result1 = 0;
-		//cout << "�̰Թ���[ : "<< v.size()<< endl;
+		//cout << "ÀÌ°Ô¹º¤§[ : "<< v.size()<< endl;
 		for (int i = 0; i < v.size(); i++) {
 			char separator = 'X';
 			std::istringstream iss(v[i]);
@@ -35,7 +35,7 @@ int main() {
 				int sum = 0;
 				for (int i = 0; i <str_buf.size(); i++) {
 					sum += i + 1;
-					//cout << "�հ� : " << sum << endl;
+					//cout << "ÇÕ°è : " << sum << endl;
 				}
 				result2 += sum;
 			}
