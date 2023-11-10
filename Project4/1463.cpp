@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-
+#include <cstring>
 using namespace std;
 
 int a[1000001] = { 0, };
@@ -11,7 +11,7 @@ int main() {
 	cin.tie(0);
 	cout.tie(0);
 	int n;
-	//cout << "¼ýÀÚ ÀÔ·Â : ";
+	//cout << "Â¼Ã½Ã€Ãš Ã€Ã”Â·Ã‚ : ";
 	cin >> n;
 	a[1] = 0;
 	a[2] = 1;
