@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <cstring>
 using namespace std;
 
 long long sum(std::vector<int>& a) {
